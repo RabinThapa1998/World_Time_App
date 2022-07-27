@@ -16,13 +16,41 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       body:SafeArea(child: 
-    Column(children: <Widget>[
-      TextButton(onPressed: ()=>Navigator.pushNamed(context, '/location'), child: Row(
-        children: <Widget>[
-          Icon(Icons.edit_location),
-          Text('Edit Location')
-          ]))
-    ],
+    Padding(
+      padding: const EdgeInsets.fromLTRB(0,150,0,0),
+      child: Column(children: <Widget>[
+          TextButton(onPressed: ()=>Navigator.pushNamed(context, '/location'),
+           child: 
+           Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(Icons.edit_location, color: Colors.black,),
+            Text('Edit Location',style: TextStyle(color: Colors.black),),
+            
+            ])
+            ),
+            SizedBox(height:20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+              Text(
+                data['location'],
+                style:TextStyle(
+                  fontSize: 28.0,
+                  letterSpacing:  2.0
+                )
+              )
+            ]),
+            SizedBox(height: 30.0),
+            Text(
+              data['time'],
+              style:TextStyle(
+                fontSize:66.0
+              )
+            )
+      ],
+      ),
     )
       ),
    
